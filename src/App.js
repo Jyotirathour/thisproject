@@ -8,6 +8,7 @@ import Login from './components/login';
 import Header from './components/header';
 
 import Signup from './components/signup';
+import AddVlog from './components/addvlog';
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -33,7 +34,7 @@ function App() {
            
            <Route element = {<Signup/>} path = "/signup"/>
            
-           
+           <Route element ={<AddVlog/>} path = "/addvlog"/>
            
            <Route path="/" element={<Navigate replace to="/home" />}>
              

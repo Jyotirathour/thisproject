@@ -50,6 +50,17 @@ const Header = (props) => {
                    Manage Users
                    </NavLink>
                    </li>
+
+                   <li className="nav-item">
+              <NavLink 
+                 to ="/addvlog"
+                 activeClassName="active"
+                 className="nav-link"
+                 >
+                   AddVlog
+                   </NavLink>
+                   </li>
+                   
                    <li className="nav-item">
                      <switch
                      checked={props.darktheme}

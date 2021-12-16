@@ -9,20 +9,22 @@ import Swal from "sweetalert2";
 
   
 
-const Signup = () => {
+const AddVlog = () => {
         const url = app_config.api_url
 
          // Two important thing to use with Formik 
          //1. formobject
   
-         const signupForm ={
-             email : '',
-             username : '',
-             password :''
+         const vlogForm ={
+            title : '',
+            thumbnail :'',
+            file :'',
+            category:'',
+            author:'',
          };
 
          //2. submit callback function
-        const SignupSubmit =(formdata) =>  {
+        const vlogSubmit =(formdata) =>  {
            console.log(formdata);
               
             // three thing are required to request
@@ -38,7 +40,7 @@ const Signup = () => {
                 }
             }
 
-            fetch(url+'/user/add',reqOpt)
+            fetch(url+'/vlog/add',reqOpt)
                .then( (res) => {
                  console.log(res.status);
                  return res.json();
@@ -56,28 +58,42 @@ const Signup = () => {
         
 
     return (
-        <div className="signup-bg">
+        <div className="vlog-bg">
          <h1 className="text-center"> Signup Here</h1>
          <hr />
          <div className="col-md-4 mx-auto">
           <Card>
               <CardContent>
-              <Formik initialValues={signupForm} onSubmit={SignupSubmit}>
+              <Formik initialValues={vlogForm} onSubmit={vlogSubmit}>
                  { ({ values, handleSubmit, handleChange }) =>(
                       <form onSubmit={handleSubmit}>
-                      <label className="mt-3">Email</label>
-                      <input placeholder="email" className="form-control" id="email" value={values.email} onChange={handleChange} />
+                      <lable className="mt-3">Title</lable>
+                      <input placeholder="title" className="form-control" id="title" value={values.title} onChange={handleChange} />
      
-                      <label className="mt-3">Username</label>
-                      <input placeholder="username" className="form-control" id="username" value={values.username} onChange={handleChange} />
+                      <label className="mt-3">Thumbnail</label>
+                      <input placeholder="thumbnail" className="form-control" id="thumbnail" value={values.thumbnail} onChange={handleChange} />
      
-                      <label className="mt-3">Password</label>
+                      <label className="mt-3">File</label>
                        <input
-                       type="password"
-                       placeholder="password"
+                       placeholder="file"
                        className="form-control"
-                       id="password" value={values.password} onChange={handleChange}
+                       id="file" value={values.file} onChange={handleChange}
                        />
+
+                       <label className="mt-3">Category</label>
+                       <input
+                       placeholder="categary"
+                       className="form-control"
+                       id="file" value={values.category} onChange={handleChange}
+                       />
+
+                      <label className="mt-3">Author</label>
+                       <input
+                       placeholder="author"
+                       className="form-control"
+                       id="author" value={values.author} onChange={handleChange}
+                       />
+
 
                       <Button 
                       type="submit"
@@ -102,4 +118,4 @@ const Signup = () => {
     );
      };
 
-export  default Signup;
+export  default AddVlog;
