@@ -1,6 +1,6 @@
 import {Formik } from "formik"
 import { Button, Card, CardContent} from '@mui/material'
-import GoogleIcon from "@mui/icons-material/Google";
+//import GoogleIcon from "@mui/icons-material/Google";
 
 import "./signup.css";
 import app_config from "../config"; 

@@ -57,7 +57,7 @@ const Signup = () => {
 
     return (
         <div className="signup-bg">
-         <h1 className="text-center"> Signup Here</h1>
+         <h1 className="text-center">Signup Here</h1>
          <hr />
          <div className="col-md-4 mx-auto">
           <Card>

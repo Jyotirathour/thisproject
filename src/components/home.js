@@ -1,4 +1,4 @@
-const Home = () => {
+const home= () => {
     const name = "Leon S Kennedy";
 
     const formula = (
@@ -31,3 +31,4 @@ const Home = () => {
 };
 
 export default Home;
+
